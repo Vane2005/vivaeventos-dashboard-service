@@ -1,0 +1,27 @@
+services:
+
+  postgres:
+    image: postgres:17
+    container_name: dashboard-postgres
+    environment:
+      POSTGRES_DB: dashboarddb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: dashboard-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  dashboard-service:
+    build: .
+    container_name: dashboard-service
+    depends_on:
+      - postgres
+      - rabbitmq
+    ports:
+      - "8080:8080"
