@@ -2,7 +2,7 @@ package co.edu.univalle.vivaeventosdashboardservice.application.usecase;
 
 import co.edu.univalle.vivaeventosdashboardservice.domain.model.DashboardMetrics;
 import co.edu.univalle.vivaeventosdashboardservice.domain.port.DashboardRepository;
-import co.edu.univalle.vivaeventosdashboardservice.infrastructure.security.RabbitMQConfig;
+import co.edu.univalle.vivaeventosdashboardservice.infrastructure.messaging.RabbitMQConfig;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
